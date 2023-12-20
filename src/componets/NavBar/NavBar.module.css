@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 18px;
+}
+
+.headerPrincipal{
+    background-color: #4b33a8 ;
+    color: #fff;
+    height: 15vh;
+    display: flex;
+    justify-content:  space-between;
+}
+
+.logo{
+    color: #fff;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    margin-left: 5vh;
+}
+.containerButtons{
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.containerButtons button{
+    padding: 15px;
+    background-color: #785ce9;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    margin: 0 1rem ;
+}
+
+

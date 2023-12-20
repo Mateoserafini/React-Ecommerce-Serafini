@@ -1,0 +1,12 @@
+.cartCount{
+    padding: 15px;
+    background-color: #785ce9;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    margin: 0 1rem ;
+}
+
+.logoCarrito{
+    color: #fff;
+}
