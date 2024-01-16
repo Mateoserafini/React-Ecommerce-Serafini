@@ -1,14 +1,26 @@
-import CartWidget from "../CartWidget/CartWidget"
+import { Link } from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
 import styles from './NavBar.module.css'
 const NavBar = () => {
     return (
         <header className={styles.headerPrincipal}>
-            <h1 className={styles.logo}>michi shop</h1>
+            <Link to={'/'}>
+                <h1 className={styles.logo}>michi shop</h1>
+            </Link>
+
             <div className={styles.containerButtons}>
-                <button>Todo</button>
-                <button>Michi 1</button>
-                <button>Michi 2</button>
-                <button>Michi 3</button>
+                <Link to={'/'} >
+                    <button>Todo</button>  
+                </Link>
+                <Link to={'/categoria/michimio'} >
+                    <button>michimio</button> 
+                </Link>
+                <Link to={'/categoria/val'}>
+                    <button>val</button>
+                </Link>
+                <Link to={'/categoria/otro'}> 
+                    <button>otro</button>
+                </Link>
                 <CartWidget />
             </div>
         </header>
