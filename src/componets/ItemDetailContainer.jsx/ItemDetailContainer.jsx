@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
     }, [itemId])
 
     return (
-        <div>
+        <div className={styles.wrapper}>
             <h1>Detalle del producto</h1>
             <ItemDetail {...product}/>
         </div>

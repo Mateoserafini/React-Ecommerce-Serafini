@@ -1,16 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, input, textarea {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .contador{
     color:black
 }
 .controles{
-    color:black
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 300px;
 }
 .btnControl{
-background-color: violet;
+    margin: 10px;
+    padding: 10px;
+    background-color:#4b33a8;
+    border-radius: 5px;
 }
 .numerito{
-    font-size: 10px;
-    color: black;
+    font-size: 1.8rem;
+    color: #4b33a8;
+    margin: 10px;
 }
 .btnAddToCart{
-    color:black
+    display: flex;
+    margin: 10px auto;
+    padding: 8px 20px;
+    border: 0;
+    border-radius: 20px;
+    background-color: #4b33a8;
+    color: #fff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.btnAddToCart:hover {
+    background-color: #725AC1;
+    box-shadow: 0 0 20px #5335c9;
+    transform: scale(1.1);
+}
+   
+.btnAddToCart:active {
+    background-color: #4b33a8;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
 }

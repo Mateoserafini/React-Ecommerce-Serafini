@@ -1,0 +1,8 @@
+.wrapper{
+    background-color: #efefef;
+}
+.wrapper h1{
+    text-transform: capitalize;
+    padding: 20px;
+}
+

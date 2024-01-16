@@ -1,30 +1,31 @@
-//import  style from  './ItemDetail.module.css'
 import ItemCount from '../ItemCount/ItemCount'
-
+import styles from './ItemDetail.module.css'
 const ItemDetail = ({ titulo, img, descripcion, precio, stock }) => {
     return (
-        <article className=''>
-            <header className=''>
+        <div className={styles.containerCardDetalles}>
+            <div className={styles.containerTitulo}>
                 <h2 className=''>
                     {titulo}
                 </h2>
-            </header>
+            </div >
+            <div className={styles.containerImg}>
                 <img src={img} alt={titulo} className='' />
-            <section>
-                <p className=''>
+            </div>
+            <div className={styles.containerInfo}>
+                <p className={styles.infoDescripcion}>
                     Descripción: {descripcion}
                 </p>
-                <p className=''>
+                <p className={styles.infoPrecio}>
                     Precio: {precio}
                 </p>
-                <p className=''>
+                <p className={styles.infoStock}>
                     Stock: {stock}
                 </p>
-            </section>
-            <footer className=''>
-                <ItemCount initial={1} stock={stock} onAdd={(cantidad) => console.log('Cantidad agregada', cantidad)} />
-            </footer>
-        </article>
+            </div>
+            <div className={styles.containerContador}>
+                <ItemCount inicio={1} stock={stock} onAdd={(cantidad) => console.log('Cantidad agregada', cantidad)} />
+            </div>
+        </div>
     )
 }
 

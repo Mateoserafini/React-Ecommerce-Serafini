@@ -23,7 +23,7 @@ const ItemListContainer = ({ greeting }) => {
   }, [categoryId])
   
   return (
-    <div className=''>
+    <div className={styles.wrapper}>
       <div className=''> 
         <div className=''>
           <h1 className=''>{greeting}</h1>
