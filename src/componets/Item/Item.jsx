@@ -13,7 +13,7 @@ const Item = ({ id, titulo, img, precio}) => {
              <div className={styles.containerPrecio}>
                  <p>Precio: ${precio}</p>
              </div>
-            <Link to={`./Item/${id}`}>
+            <Link to={`/Item/${id}`}>
                 <div className={styles.containerDetalles}>
                     Ver Detalles
                 </div>
