@@ -55,5 +55,28 @@ a {
     margin: 10px;
 }
 
-
-
+.btnFinalizarCompra{
+    display: flex;
+    margin: 10px auto;
+    padding: 8px 20px;
+    border: 0;
+    border-radius: 20px;
+    background-color: #4b33a8;
+    color: #fff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.btnFinalizarCompra:hover {
+    background-color: #725AC1;
+    box-shadow: 0 0 20px #5335c9;
+    transform: scale(1.1);
+}
+   
+.btnFinalizarCompra:active {
+    background-color: #4b33a8;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+}

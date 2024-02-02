@@ -1,26 +1,33 @@
-import { useState, useEffect } from 'react'
-import { getProducts ,  getProductsByCategory} from '../../asyncMock.js'
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList.jsx'
 import styles from './ItemListContainer.module.css'
+import { getProducts } from "../../services/firebase/firestore/products"
+import { useAsync } from "../../hooks/useAsync"
+import { useNotification } from "../../notification/NotificationService"
 
 const ItemListContainer = ({ greeting }) => {
-  const [products, setProducts] = useState([])
-
   const { categoryId } = useParams ()
+  const { showNotification } = useNotification()
 
-  useEffect(() => {
+  useEffect (() => {
+    if(categoryId) document.title = 'michistore ' + categoryId
+    return () => {
+      document.title = 'michistore'
+    }
+  })
 
-    const asyncFunction = categoryId ? getProductsByCategory : getProducts
+  const asyncFunction = () => getProducts(categoryId)
 
-    asyncFunction(categoryId)
-            .then(response => {
-                setProducts(response)
-            }) 
-      .catch(error => {
-        console.error(error)
-      })
-  }, [categoryId])
+  const { data: products ,error, loading } = useAsync(asyncFunction, [categoryId])
+
+  if(loading) {
+      return <h1>Cargando los productos...</h1>
+  }
+
+  if(error) {
+    showNotification('error', 'Hubo un error')
+  }
   
   return (
     <div className={styles.wrapper}>

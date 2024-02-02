@@ -1,6 +1,26 @@
 import ItemCount from '../ItemCount/ItemCount'
 import styles from './ItemDetail.module.css'
-const ItemDetail = ({ titulo, img, descripcion, precio, stock }) => {
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useCart } from '../../context/CartContext'
+import { useNotification } from '../../notification/NotificationService'
+
+const ItemDetail = ({ id, titulo, img, descripcion, precio, stock }) => {
+    const [quantityAdded, setQuantityAdded] = useState(0)
+    const { addItem } = useCart()
+    const { showNotification } = useNotification()
+    
+    const handleOnAdd= (cantidad) => {
+        setQuantityAdded(cantidad)
+
+
+        const item = {
+            id, titulo, precio, cantidad
+        }
+        addItem(item)
+        showNotification('info', `Se agregaron correctamente ${cantidad} ${titulo}`)
+    }
+
     return (
         <div className={styles.containerCardDetalles}>
             <div className={styles.containerTitulo}>
@@ -23,7 +43,16 @@ const ItemDetail = ({ titulo, img, descripcion, precio, stock }) => {
                 </p>
             </div>
             <div className={styles.containerContador}>
-                <ItemCount inicio={1} stock={stock} onAdd={(cantidad) => console.log('Cantidad agregada', cantidad)} />
+               {
+                quantityAdded === 0 ? 
+                (
+                    <ItemCount inicio={1} stock={stock} onAdd={handleOnAdd} />
+                ) : (
+
+                    <Link to='/cart'><button className={styles.btnFinalizarCompra}>Finalizar compra</button></Link>
+
+                )
+               } 
             </div>
         </div>
     )

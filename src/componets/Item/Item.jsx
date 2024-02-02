@@ -17,7 +17,7 @@ const Item = ({ id, titulo, img, precio}) => {
                 <div className={styles.containerDetalles}>
                     Ver Detalles
                 </div>
-            </Link>
+            </Link> 
              
         </div>
     );

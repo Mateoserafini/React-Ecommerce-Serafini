@@ -22,7 +22,7 @@ const ItemCount = ({stock, inicio, onAdd}) => {
                 <button className= {styles.btnControl} onClick={decrement}>-</button>
             </div>
             <div>
-                <button className={styles.btnAddToCart} onClick={() => onAdd(cantidad)} desabled={!stock}>
+                <button className={styles.btnAddToCart} onClick={() => onAdd(cantidad)} disabled={!stock}>
                 Agregar al carrito
                 </button>
             </div>
